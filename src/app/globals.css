@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #12161c;
+  --panel: #181f28;
+  --panel-line: #262f3b;
+  --fog: #e9edf2;
+  --muted: #7c8798;
+  --amber: #e8a33d;
+  --red: #c4534a;
+  --teal: #4fa8a0;
+  --violet: #8d84c9;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-panel: var(--panel);
+  --color-panel-line: var(--panel-line);
+  --color-fog: var(--fog);
+  --color-muted: var(--muted);
+  --color-amber: var(--amber);
+  --color-red: var(--red);
+  --color-teal: var(--teal);
+  --color-violet: var(--violet);
+  --font-mono-display: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: var(--ink);
+  color: var(--fog);
+  font-family: var(--font-body), sans-serif;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+.scan-grid {
+  background-image: linear-gradient(var(--panel-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--panel-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -1px -1px;
+}

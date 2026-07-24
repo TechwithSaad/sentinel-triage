@@ -1,0 +1,60 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": { "driver": { "name": "Sentinel-Scanner", "version": "0.3.0" } },
+      "results": [
+        {
+          "ruleId": "hardcoded-secret.aws-access-key",
+          "level": "warning",
+          "message": { "text": "Possible AWS Access Key ID detected: AKIA... pattern matched in source." },
+          "properties": { "severity": "medium", "entropy": 4.8 },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "src/config/aws.ts" }, "region": { "startLine": 12 } } }]
+        },
+        {
+          "ruleId": "hardcoded-secret.generic-high-entropy",
+          "level": "error",
+          "message": { "text": "High entropy string (entropy=5.9) assigned to variable 'apiKey' in test fixture." },
+          "properties": { "severity": "high", "entropy": 5.9 },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "tests/fixtures/mock-config.ts" }, "region": { "startLine": 4 } } }]
+        },
+        {
+          "ruleId": "misconfig.debug-mode-enabled",
+          "level": "warning",
+          "message": { "text": "DEBUG flag set to true in what appears to be a production config file." },
+          "properties": { "severity": "medium" },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "config/production.env" }, "region": { "startLine": 3 } } }]
+        },
+        {
+          "ruleId": "hardcoded-secret.private-key",
+          "level": "error",
+          "message": { "text": "PEM-formatted private key block found committed to the repository." },
+          "properties": { "severity": "high" },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "deploy/ssl/server.key" }, "region": { "startLine": 1 } } }]
+        },
+        {
+          "ruleId": "misconfig.cors-wildcard",
+          "level": "note",
+          "message": { "text": "CORS policy allows origin '*' on an authenticated API route." },
+          "properties": { "severity": "low" },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "src/middleware/cors.ts" }, "region": { "startLine": 18 } } }]
+        },
+        {
+          "ruleId": "hardcoded-secret.db-connection-string",
+          "level": "warning",
+          "message": { "text": "Database connection string with embedded credentials found in source." },
+          "properties": { "severity": "medium" },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "src/db/connect.ts" }, "region": { "startLine": 7 } } }]
+        },
+        {
+          "ruleId": "misconfig.readme-placeholder-token",
+          "level": "note",
+          "message": { "text": "String resembling a Slack webhook token found in README.md example block." },
+          "properties": { "severity": "low" },
+          "locations": [{ "physicalLocation": { "artifactLocation": { "uri": "README.md" }, "region": { "startLine": 88 } } }]
+        }
+      ]
+    }
+  ]
+}
