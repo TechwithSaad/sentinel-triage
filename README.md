@@ -14,7 +14,7 @@ This is for: developers and small teams using Sentinel-Scanner (or any SARIF-emi
 
 ## b. Live URL
 
-**[https://sentinel-triage.vercel.app](https://sentinel-triage.vercel.app)** *(replace with your actual Vercel URL after deploying — see below)*
+**[https://sentinel-triage.vercel.app](https://sentinel-triage.vercel.app)**
 
 ## c. Features
 
@@ -68,12 +68,14 @@ The model is called via Groq's API (free tier, no credit card required, no regio
 - **Built with the help of:** Claude (Anthropic) as a pair-programmer for scaffolding, the SARIF parser, and UI components — the *app itself* calls Groq at runtime for the triage feature
 
 ## f. Screenshots
+![Input screen](./screenshots/1.jpg)
+*Paste or upload a Sentinel-Scanner SARIF log, or try the built-in sample scan.*
 
-*(Add at least 3 screenshots here after deploying — see checklist below. Suggested shots: the empty input screen, a running/loading state, and the results dashboard with findings expanded.)*
+![Results dashboard](./screenshots/2.jpg)
+*AI-triaged findings with overall risk, executive summary, and priority filters.*
 
-1. `screenshots/01-input-screen.png` — the paste/upload screen with "Try sample scan"
-2. `screenshots/02-results-dashboard.png` — triaged findings with priority filters
-3. `screenshots/03-finding-detail.png` — a single finding showing plain-English explanation, impact, and remediation
+![Finding detail](./screenshots/3.jpg)
+*A single finding showing the plain-English explanation, real-world impact, and remediation step.*
 
 ## g. How to run this project
 
